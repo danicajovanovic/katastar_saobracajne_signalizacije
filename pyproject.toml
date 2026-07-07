@@ -1,0 +1,13 @@
+[project]
+name = "katastar-saobracajne-signalizacije"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "geopandas>=1.1.4",
+    "pandas>=3.0.3",
+    "psycopg2-binary>=2.9.12",
+    "pyogrio>=0.13.0",
+    "shapely>=2.1.2",
+]
