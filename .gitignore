@@ -20,11 +20,10 @@ build/
 .env
 
 # GIS generated data (ako bude veliko)
-data/processed/*.gpkg
+
 
 data/raw/
 data/shp/
-data/processed/
 *.zip
 *.shp
 *.dbf
