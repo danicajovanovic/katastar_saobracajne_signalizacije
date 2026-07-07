@@ -1,33 +1,18 @@
-# Virtual environment
 .venv/
-
-# Python cache
 __pycache__/
 *.pyc
-
-# VS Code
 .vscode/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Build
+.env
 dist/
 build/
 
-# Local environment
-.env
-
-# GIS generated data (ako bude veliko)
-
-
 data/raw/
 data/shp/
+
 *.zip
 *.shp
 *.dbf
 *.shx
 *.prj
 *.cpg
-*.geojson
+*.gpkg
