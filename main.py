@@ -1,15 +1,14 @@
-from src.database.connection import get_connection
-
+import subprocess
+import sys
 
 def main():
-    try:
-        conn = get_connection()
-        print("Uspesno povezivanje sa bazom.")
-        conn.close()
-    except Exception as e:
-        print("Greska pri povezivanju:")
-        print(e)
-
+    subprocess.run([
+        sys.executable,
+        "-m",
+        "streamlit",
+        "run",
+        "src/app/streamlit_app.py"
+    ])
 
 if __name__ == "__main__":
     main()
