@@ -2,8 +2,21 @@ import pandas as pd
 
 from src.database.connection import managed_connection, managed_cursor
 
+ALLOWED_TABLES = {
+    "ulice",
+    "raskrsnice",
+    "saobracajni_znakovi",
+    "semafori",
+    "ml_detekcije",
+}
+
 
 def read_table(table_name):
+    if table_name not in ALLOWED_TABLES:
+        raise ValueError(
+            f"Nedozvoljen naziv tabele: {table_name}"
+        )
+
     query = f"""
         SELECT *
         FROM {table_name}
