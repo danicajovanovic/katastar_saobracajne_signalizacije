@@ -1,3 +1,4 @@
+import math
 from pathlib import Path
 from datetime import date
 
@@ -143,6 +144,25 @@ def insert_detection_to_database(
     conn.close()
 
 
+JITTER_RADIUS_M = 4.0
+
+
+def apply_jitter(lon, lat, index, total, radius_m=JITTER_RADIUS_M):
+    """
+    Kozmetički (ne stvarni geolokacioni) pomak: kad je na jednoj fotografiji
+    detektovano vise znakova, rasporedjuje ih ravnomerno po malom krugu oko
+    unete tacke da se markeri na mapi ne preklapaju tacka-na-tacku.
+    """
+    if total <= 1:
+        return lon, lat
+
+    angle = 2 * math.pi * index / total
+    lat_offset = (radius_m * math.cos(angle)) / 111_320
+    lon_offset = (radius_m * math.sin(angle)) / (111_320 * math.cos(math.radians(lat)))
+
+    return lon + lon_offset, lat + lat_offset
+
+
 def detect_image(image_path, lon, lat, min_confidence=0.25):
     prepare_ml_table()
 
@@ -158,19 +178,23 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
         output_path = RESULTS_DIR / f"detected_{image_name}"
         result.save(filename=str(output_path))
 
-        for box in result.boxes:
+        total_boxes = len(result.boxes)
+
+        for index, box in enumerate(result.boxes):
             class_id = int(box.cls[0])
             class_name = model.names[class_id]
             confidence = float(box.conf[0])
 
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
+            detection_lon, detection_lat = apply_jitter(lon, lat, index, total_boxes)
+
             insert_detection_to_database(
                 klasa=class_name,
                 confidence=confidence,
                 image_name=image_name,
-                lon=lon,
-                lat=lat,
+                lon=detection_lon,
+                lat=detection_lat,
                 model_name=str(CUSTOM_MODEL_PATH),
                 bbox=(x1, y1, x2, y2)
             )
@@ -179,8 +203,8 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
                 "klasa": class_name,
                 "confidence": round(confidence, 3),
                 "naziv_slike": image_name,
-                "lon": lon,
-                "lat": lat,
+                "lon": round(detection_lon, 6),
+                "lat": round(detection_lat, 6),
                 "bbox_x1": round(x1, 2),
                 "bbox_y1": round(y1, 2),
                 "bbox_x2": round(x2, 2),
