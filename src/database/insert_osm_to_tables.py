@@ -208,6 +208,34 @@ def insert_traffic_objects():
     print(f"Ubaceni semafori: {len(traffic_lights)}")
 
 
+def link_signs_to_nearest_street():
+    """
+    Popunjava FK saobracajni_znakovi.ulica_id najblizom ulicom (KNN preko
+    GiST indeksa), za sve znakove kod kojih ta veza jos nije postavljena.
+    """
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE saobracajni_znakovi z
+        SET ulica_id = (
+            SELECT u.id
+            FROM ulice u
+            ORDER BY u.geom <-> z.geom
+            LIMIT 1
+        )
+        WHERE z.ulica_id IS NULL;
+    """)
+
+    linked = cur.rowcount
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    print(f"Povezano znakova sa najblizom ulicom: {linked}")
+
+
 def insert_demo_ml_detections():
     conn = get_connection()
     cur = conn.cursor()
@@ -272,6 +300,7 @@ def main():
     clear_tables()
     insert_roads()
     insert_traffic_objects()
+    link_signs_to_nearest_street()
     insert_demo_ml_detections()
     print_counts()
 

@@ -10,17 +10,17 @@ from src.database.connection import get_connection
 RESULTS_DIR = Path("results/ml/detections")
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-CUSTOM_MODEL_PATH = Path("models/traffic_sign_yolo.pt")
-DEFAULT_MODEL = "yolov8n.pt"
-
+CUSTOM_MODEL_PATH = Path("models/best.pt")
 
 def get_model():
-    if CUSTOM_MODEL_PATH.exists():
-        print("Koristi se specijalizovani model za saobracajne znakove.")
-        return YOLO(str(CUSTOM_MODEL_PATH))
+    if not CUSTOM_MODEL_PATH.exists():
+        raise FileNotFoundError(
+            "Model nije pronađen. Dodaj trenirani model na putanju: "
+            "models/best.pt"
+        )
 
-    print("Specijalizovani model nije pronadjen. Koristi se opsti YOLOv8n model.")
-    return YOLO(DEFAULT_MODEL)
+    print("Koristi se model treniran od nule za saobracajne znakove.")
+    return YOLO(str(CUSTOM_MODEL_PATH))
 
 
 def prepare_ml_table():
@@ -62,6 +62,29 @@ def prepare_ml_table():
     conn.close()
 
 
+NEAREST_SIGN_MATCH_DISTANCE_M = 50
+
+
+def find_nearest_sign(cur, lon, lat, max_distance_m=NEAREST_SIGN_MATCH_DISTANCE_M):
+    """
+    Trazi najblizi vec evidentirani znak iz katastra u okviru max_distance_m.
+    Ako postoji, ML detekcija se vezuje za njega preko znak_id (FK).
+    """
+    cur.execute("""
+        SELECT z.id, ST_DistanceSphere(z.geom, ST_SetSRID(ST_MakePoint(%s, %s), 4326)) AS udaljenost_m
+        FROM saobracajni_znakovi z
+        WHERE z.geom IS NOT NULL
+        ORDER BY udaljenost_m
+        LIMIT 1;
+    """, (lon, lat))
+
+    result = cur.fetchone()
+    if result is not None and result[1] <= max_distance_m:
+        return result[0]
+
+    return None
+
+
 def insert_detection_to_database(
     klasa,
     confidence,
@@ -75,6 +98,7 @@ def insert_detection_to_database(
     cur = conn.cursor()
 
     x1, y1, x2, y2 = bbox
+    znak_id = find_nearest_sign(cur, lon, lat)
 
     cur.execute("""
         INSERT INTO ml_detekcije
@@ -94,7 +118,7 @@ def insert_detection_to_database(
         )
         VALUES
         (
-            %s, %s, %s, %s, NULL,
+            %s, %s, %s, %s, %s,
             ST_SetSRID(ST_MakePoint(%s, %s), 4326),
             %s, %s, %s, %s, %s, %s
         );
@@ -103,6 +127,7 @@ def insert_detection_to_database(
         float(confidence),
         image_name,
         date.today(),
+        znak_id,
         lon,
         lat,
         model_name,
@@ -146,7 +171,7 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
                 image_name=image_name,
                 lon=lon,
                 lat=lat,
-                model_name=str(CUSTOM_MODEL_PATH if CUSTOM_MODEL_PATH.exists() else DEFAULT_MODEL),
+                model_name=str(CUSTOM_MODEL_PATH),
                 bbox=(x1, y1, x2, y2)
             )
 

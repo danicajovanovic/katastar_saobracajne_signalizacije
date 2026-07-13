@@ -1375,9 +1375,11 @@
 1616,pedestrian_crossing,dobro,170,aktivan
 1616,pedestrian_crossing,dobro,171,aktivan
 1616,pedestrian_crossing,dobro,200,aktivan
+1616,pedestrian_crossing,dobro,425,neispravan
 1617,pedestrian_crossing,dobro,170,aktivan
 1617,pedestrian_crossing,dobro,171,aktivan
 1617,pedestrian_crossing,dobro,200,aktivan
+1617,pedestrian_crossing,dobro,425,neispravan
 1618,pedestrian_crossing,dobro,170,aktivan
 1618,pedestrian_crossing,dobro,171,aktivan
 1618,pedestrian_crossing,dobro,200,aktivan
@@ -1399,9 +1401,11 @@
 1631,pedestrian_crossing,dobro,170,aktivan
 1631,pedestrian_crossing,dobro,171,aktivan
 1631,pedestrian_crossing,dobro,200,aktivan
+1631,pedestrian_crossing,dobro,425,neispravan
 1632,pedestrian_crossing,dobro,170,aktivan
 1632,pedestrian_crossing,dobro,171,aktivan
 1632,pedestrian_crossing,dobro,200,aktivan
+1632,pedestrian_crossing,dobro,425,neispravan
 1633,pedestrian_crossing,dobro,167,aktivan
 1633,pedestrian_crossing,dobro,172,aktivan
 1633,pedestrian_crossing,dobro,182,aktivan
@@ -3622,3 +3626,10 @@
 3688,pedestrian_crossing,dobro,417,aktivan
 3688,pedestrian_crossing,dobro,418,aktivan
 3717,pedestrian_crossing,dobro,422,aktivan
+3729,stop,dobro,423,aktivan
+3730,ogranicenje_brzine,dobro,424,aktivan
+3731,pesacki_prelaz,ostecen,170,aktivan
+3731,pesacki_prelaz,ostecen,425,neispravan
+3732,zabrana_parkiranja,potrebno odrzavanje,86,aktivan
+3732,zabrana_parkiranja,potrebno odrzavanje,426,aktivan
+3733,obavezan_smer,dobro,427,u_odrzavanju

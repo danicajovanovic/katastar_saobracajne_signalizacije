@@ -1,0 +1,330 @@
+﻿detekcija_id,klasa,confidence,naziv_slike,katastarski_znak_id,poklapa_se_sa_tipom,poklapa_se_sa_katastrom
+1,stop,0.9,demo_detekcija_1.jpg,1,stop,True
+2,stop,0.9,demo_detekcija_2.jpg,2,stop,True
+3,stop,0.9,demo_detekcija_3.jpg,3,stop,True
+4,stop,0.9,demo_detekcija_4.jpg,4,stop,True
+5,pedestrian_crossing,0.9,demo_detekcija_5.jpg,23,stop,True
+6,person,0.7665987610816956,znak.jpg,3728,rucno_dodat_znak,True
+7,person,0.7665987610816956,znak.jpg,3728,rucno_dodat_znak,True
+8,stop sign,0.7090008854866028,znak.jpg,3728,rucno_dodat_znak,True
+9,stop sign,0.7090008854866028,znak.jpg,3728,rucno_dodat_znak,True
+10,II-30-40,0.13703446090221405,znak1.jpg,3728,rucno_dodat_znak,True
+11,III-47,0.07780771702528,znak1.jpg,3728,rucno_dodat_znak,True
+12,II-7.1,0.05633610486984253,znak1.jpg,3728,rucno_dodat_znak,True
+13,person,0.7665987610816956,znak.jpg,3728,rucno_dodat_znak,True
+14,stop sign,0.7090008854866028,znak.jpg,3728,rucno_dodat_znak,True
+15,person,0.7665987610816956,znak.jpg,3728,rucno_dodat_znak,True
+16,stop sign,0.7090008854866028,znak.jpg,3728,rucno_dodat_znak,True
+17,person,0.060318175703287125,znak1.jpg,3728,rucno_dodat_znak,True
+18,stop sign,0.041236236691474915,znak1.jpg,3728,rucno_dodat_znak,True
+19,clock,0.020518207922577858,znak1.jpg,3728,rucno_dodat_znak,True
+20,clock,0.015076734125614166,znak1.jpg,3728,rucno_dodat_znak,True
+21,car,0.008832460269331932,znak1.jpg,3728,rucno_dodat_znak,True
+22,car,0.007442745380103588,znak1.jpg,3728,rucno_dodat_znak,True
+23,clock,0.007280232850462198,znak1.jpg,3728,rucno_dodat_znak,True
+24,person,0.006633869372308254,znak1.jpg,3728,rucno_dodat_znak,True
+25,stop sign,0.0060181827284395695,znak1.jpg,3728,rucno_dodat_znak,True
+26,car,0.005332754459232092,znak1.jpg,3728,rucno_dodat_znak,True
+27,car,0.005094111431390047,znak1.jpg,3728,rucno_dodat_znak,True
+28,car,0.004542272072285414,znak1.jpg,3728,rucno_dodat_znak,True
+29,clock,0.004512090235948563,znak1.jpg,3728,rucno_dodat_znak,True
+30,car,0.004241138231009245,znak1.jpg,3728,rucno_dodat_znak,True
+31,bench,0.003931530751287937,znak1.jpg,3728,rucno_dodat_znak,True
+32,stop sign,0.0035823157522827387,znak1.jpg,3728,rucno_dodat_znak,True
+33,person,0.0034126199316233397,znak1.jpg,3728,rucno_dodat_znak,True
+34,person,0.003380084875971079,znak1.jpg,3728,rucno_dodat_znak,True
+35,car,0.003265328472480178,znak1.jpg,3728,rucno_dodat_znak,True
+36,person,0.0028077103197574615,znak1.jpg,3728,rucno_dodat_znak,True
+37,person,0.002768914680927992,znak1.jpg,3728,rucno_dodat_znak,True
+38,person,0.0026495871134102345,znak1.jpg,3728,rucno_dodat_znak,True
+39,car,0.0026209286879748106,znak1.jpg,3728,rucno_dodat_znak,True
+40,person,0.002553364494815469,znak1.jpg,3728,rucno_dodat_znak,True
+41,car,0.00250168121419847,znak1.jpg,3728,rucno_dodat_znak,True
+42,person,0.002496240893378854,znak1.jpg,3728,rucno_dodat_znak,True
+43,umbrella,0.0024580678436905146,znak1.jpg,3728,rucno_dodat_znak,True
+44,car,0.0020981039851903915,znak1.jpg,3728,rucno_dodat_znak,True
+45,clock,0.0020468253642320633,znak1.jpg,3728,rucno_dodat_znak,True
+46,person,0.002037355676293373,znak1.jpg,3728,rucno_dodat_znak,True
+47,clock,0.0019458670867606997,znak1.jpg,3728,rucno_dodat_znak,True
+48,car,0.0018286400008946657,znak1.jpg,3728,rucno_dodat_znak,True
+49,stop sign,0.0016914029838517308,znak1.jpg,3728,rucno_dodat_znak,True
+50,umbrella,0.001682788715697825,znak1.jpg,3728,rucno_dodat_znak,True
+51,bench,0.0015723919495940208,znak1.jpg,3728,rucno_dodat_znak,True
+52,traffic light,0.0013374009868130088,znak1.jpg,3728,rucno_dodat_znak,True
+53,car,0.0013207418378442526,znak1.jpg,3728,rucno_dodat_znak,True
+54,traffic light,0.0011468344600871205,znak1.jpg,3728,rucno_dodat_znak,True
+55,fire hydrant,0.0010468184482306242,znak1.jpg,3728,rucno_dodat_znak,True
+56,person,0.0010173774790018797,znak1.jpg,3728,rucno_dodat_znak,True
+57,car,0.0010148817673325539,znak1.jpg,3728,rucno_dodat_znak,True
+58,car,0.001007238868623972,znak1.jpg,3728,rucno_dodat_znak,True
+59,bench,0.0008276117732748389,znak1.jpg,3728,rucno_dodat_znak,True
+60,person,0.0008168505737558007,znak1.jpg,3728,rucno_dodat_znak,True
+61,person,0.0007856161682866514,znak1.jpg,3728,rucno_dodat_znak,True
+62,traffic light,0.0007718487759120762,znak1.jpg,3728,rucno_dodat_znak,True
+63,bench,0.0006963222404010594,znak1.jpg,3728,rucno_dodat_znak,True
+64,car,0.0006708301370963454,znak1.jpg,3728,rucno_dodat_znak,True
+65,stop sign,0.0006593383732251823,znak1.jpg,3728,rucno_dodat_znak,True
+66,car,0.0006138286553323269,znak1.jpg,3728,rucno_dodat_znak,True
+67,car,0.0005737582687288523,znak1.jpg,3728,rucno_dodat_znak,True
+68,bench,0.0005699779721908271,znak1.jpg,3728,rucno_dodat_znak,True
+69,bench,0.0005649223458021879,znak1.jpg,3728,rucno_dodat_znak,True
+70,clock,0.0005626970087178051,znak1.jpg,3728,rucno_dodat_znak,True
+71,car,0.000516820524353534,znak1.jpg,3728,rucno_dodat_znak,True
+72,car,0.0005038177478127182,znak1.jpg,3728,rucno_dodat_znak,True
+73,car,0.0005010197637602687,znak1.jpg,3728,rucno_dodat_znak,True
+74,car,0.0004981309175491333,znak1.jpg,3728,rucno_dodat_znak,True
+75,traffic light,0.00046513613779097795,znak1.jpg,3728,rucno_dodat_znak,True
+76,bicycle,0.0004446617094799876,znak1.jpg,3728,rucno_dodat_znak,True
+77,person,0.0004326842608861625,znak1.jpg,3728,rucno_dodat_znak,True
+78,bench,0.0004233932704664767,znak1.jpg,3728,rucno_dodat_znak,True
+79,bench,0.00041632793727330863,znak1.jpg,3728,rucno_dodat_znak,True
+80,car,0.00041499934741295874,znak1.jpg,3728,rucno_dodat_znak,True
+81,car,0.00041329915984533727,znak1.jpg,3728,rucno_dodat_znak,True
+82,bench,0.00040895360871218145,znak1.jpg,3728,rucno_dodat_znak,True
+83,truck,0.00038909667637199163,znak1.jpg,3728,rucno_dodat_znak,True
+84,traffic light,0.00038552735350094736,znak1.jpg,3728,rucno_dodat_znak,True
+85,truck,0.00038413458969444036,znak1.jpg,3728,rucno_dodat_znak,True
+86,person,0.0003831336216535419,znak1.jpg,3728,rucno_dodat_znak,True
+87,traffic light,0.0003609854029491544,znak1.jpg,3728,rucno_dodat_znak,True
+88,potted plant,0.00035968192969448864,znak1.jpg,3728,rucno_dodat_znak,True
+89,bench,0.00035888509592041373,znak1.jpg,3728,rucno_dodat_znak,True
+90,bench,0.0003540100296959281,znak1.jpg,3728,rucno_dodat_znak,True
+91,bench,0.0003500510938465595,znak1.jpg,3728,rucno_dodat_znak,True
+92,car,0.000346640677889809,znak1.jpg,3728,rucno_dodat_znak,True
+93,bench,0.0003404309682082385,znak1.jpg,3728,rucno_dodat_znak,True
+94,traffic light,0.00032892433227971196,znak1.jpg,3728,rucno_dodat_znak,True
+95,traffic light,0.0003274634655099362,znak1.jpg,3728,rucno_dodat_znak,True
+96,train,0.00032318744342774153,znak1.jpg,3728,rucno_dodat_znak,True
+97,bench,0.0003123354690615088,znak1.jpg,3728,rucno_dodat_znak,True
+98,traffic light,0.000306195201119408,znak1.jpg,3728,rucno_dodat_znak,True
+99,car,0.00029266715864650905,znak1.jpg,3728,rucno_dodat_znak,True
+100,stop sign,0.00028641955577768385,znak1.jpg,3728,rucno_dodat_znak,True
+101,bench,0.0002808700082823634,znak1.jpg,3728,rucno_dodat_znak,True
+102,traffic light,0.00025960782659240067,znak1.jpg,3728,rucno_dodat_znak,True
+103,bench,0.00025736246607266366,znak1.jpg,3728,rucno_dodat_znak,True
+104,bench,0.00025732224457897246,znak1.jpg,3728,rucno_dodat_znak,True
+105,bench,0.0002480117545928806,znak1.jpg,3728,rucno_dodat_znak,True
+106,traffic light,0.00022862415062263608,znak1.jpg,3728,rucno_dodat_znak,True
+107,traffic light,0.00022605255071539432,znak1.jpg,3728,rucno_dodat_znak,True
+108,traffic light,0.00021848836331628263,znak1.jpg,3728,rucno_dodat_znak,True
+109,umbrella,0.0002120809949701652,znak1.jpg,3728,rucno_dodat_znak,True
+110,car,0.00020966488227713853,znak1.jpg,3728,rucno_dodat_znak,True
+111,person,0.00020504521671682596,znak1.jpg,3728,rucno_dodat_znak,True
+112,traffic light,0.00020485703134909272,znak1.jpg,3728,rucno_dodat_znak,True
+113,person,0.00019106878607999533,znak1.jpg,3728,rucno_dodat_znak,True
+114,person,0.0001827596570365131,znak1.jpg,3728,rucno_dodat_znak,True
+115,bench,0.00018212506256531924,znak1.jpg,3728,rucno_dodat_znak,True
+116,truck,0.00017863407265394926,znak1.jpg,3728,rucno_dodat_znak,True
+117,potted plant,0.000178469272213988,znak1.jpg,3728,rucno_dodat_znak,True
+118,person,0.00017434556502848864,znak1.jpg,3728,rucno_dodat_znak,True
+119,person,0.0001722425949992612,znak1.jpg,3728,rucno_dodat_znak,True
+120,stop sign,0.00016868057718966156,znak1.jpg,3728,rucno_dodat_znak,True
+121,traffic light,0.0001649246405577287,znak1.jpg,3728,rucno_dodat_znak,True
+122,person,0.00016375674749724567,znak1.jpg,3728,rucno_dodat_znak,True
+123,traffic light,0.00016120127111207694,znak1.jpg,3728,rucno_dodat_znak,True
+124,person,0.00015935998817440122,znak1.jpg,3728,rucno_dodat_znak,True
+125,bench,0.00015434938541147858,znak1.jpg,3728,rucno_dodat_znak,True
+126,person,0.00015150207036640495,znak1.jpg,3728,rucno_dodat_znak,True
+127,bench,0.00015132564294617623,znak1.jpg,3728,rucno_dodat_znak,True
+128,traffic light,0.00015110877575352788,znak1.jpg,3728,rucno_dodat_znak,True
+129,potted plant,0.00014263625780586153,znak1.jpg,3728,rucno_dodat_znak,True
+130,traffic light,0.00014124102017376572,znak1.jpg,3728,rucno_dodat_znak,True
+131,bench,0.0001400936598656699,znak1.jpg,3728,rucno_dodat_znak,True
+132,fire hydrant,0.0001388391974614933,znak1.jpg,3728,rucno_dodat_znak,True
+133,bench,0.00013637804659083486,znak1.jpg,3728,rucno_dodat_znak,True
+134,person,0.00013625599967781454,znak1.jpg,3728,rucno_dodat_znak,True
+135,bench,0.0001355582644464448,znak1.jpg,3728,rucno_dodat_znak,True
+136,potted plant,0.0001351273531327024,znak1.jpg,3728,rucno_dodat_znak,True
+137,frisbee,0.00012873161176685244,znak1.jpg,3728,rucno_dodat_znak,True
+138,bench,0.00012768732267431915,znak1.jpg,3728,rucno_dodat_znak,True
+139,truck,0.00012605149822775275,znak1.jpg,3728,rucno_dodat_znak,True
+140,traffic light,0.00012571863771881908,znak1.jpg,3728,rucno_dodat_znak,True
+141,potted plant,0.00012567643716465682,znak1.jpg,3728,rucno_dodat_znak,True
+142,car,0.00012521768803708255,znak1.jpg,3728,rucno_dodat_znak,True
+143,bench,0.00012376895756460726,znak1.jpg,3728,rucno_dodat_znak,True
+144,person,0.00012357697414699942,znak1.jpg,3728,rucno_dodat_znak,True
+145,traffic light,0.00012291614257264882,znak1.jpg,3728,rucno_dodat_znak,True
+146,potted plant,0.00012103901826776564,znak1.jpg,3728,rucno_dodat_znak,True
+147,truck,0.00012053085083607584,znak1.jpg,3728,rucno_dodat_znak,True
+148,bench,0.00011943139543291181,znak1.jpg,3728,rucno_dodat_znak,True
+149,person,0.00011496746446937323,znak1.jpg,3728,rucno_dodat_znak,True
+150,potted plant,0.00010939262574538589,znak1.jpg,3728,rucno_dodat_znak,True
+151,bench,0.00010772815585369244,znak1.jpg,3728,rucno_dodat_znak,True
+152,potted plant,0.00010667749302228913,znak1.jpg,3728,rucno_dodat_znak,True
+153,car,0.00010637062223395333,znak1.jpg,3728,rucno_dodat_znak,True
+154,traffic light,0.000105549770523794,znak1.jpg,3728,rucno_dodat_znak,True
+155,potted plant,0.00010473116708453745,znak1.jpg,3728,rucno_dodat_znak,True
+156,potted plant,0.00010348123760195449,znak1.jpg,3728,rucno_dodat_znak,True
+157,car,0.00010138939251191914,znak1.jpg,3728,rucno_dodat_znak,True
+158,bicycle,0.00010076000762637705,znak1.jpg,3728,rucno_dodat_znak,True
+159,car,0.00010050120908999816,znak1.jpg,3728,rucno_dodat_znak,True
+160,potted plant,9.856702672550455e-05,znak1.jpg,3728,rucno_dodat_znak,True
+161,person,9.751155448611826e-05,znak1.jpg,3728,rucno_dodat_znak,True
+162,bird,9.70818946370855e-05,znak1.jpg,3728,rucno_dodat_znak,True
+163,person,9.449991921428591e-05,znak1.jpg,3728,rucno_dodat_znak,True
+164,bench,9.385439625475556e-05,znak1.jpg,3728,rucno_dodat_znak,True
+165,potted plant,9.380902338307351e-05,znak1.jpg,3728,rucno_dodat_znak,True
+166,car,9.374750516144559e-05,znak1.jpg,3728,rucno_dodat_znak,True
+167,bench,9.284681436838582e-05,znak1.jpg,3728,rucno_dodat_znak,True
+168,truck,9.283831604989246e-05,znak1.jpg,3728,rucno_dodat_znak,True
+169,traffic light,9.243241220247e-05,znak1.jpg,3728,rucno_dodat_znak,True
+170,bench,9.176346065942198e-05,znak1.jpg,3728,rucno_dodat_znak,True
+171,traffic light,9.152550046565011e-05,znak1.jpg,3728,rucno_dodat_znak,True
+172,bench,8.958378020906821e-05,znak1.jpg,3728,rucno_dodat_znak,True
+173,person,8.742609497858211e-05,znak1.jpg,3728,rucno_dodat_znak,True
+174,person,8.569309284212068e-05,znak1.jpg,3728,rucno_dodat_znak,True
+175,bench,8.536717359675094e-05,znak1.jpg,3728,rucno_dodat_znak,True
+176,bird,8.411643648287281e-05,znak1.jpg,3728,rucno_dodat_znak,True
+177,person,8.379731298191473e-05,znak1.jpg,3728,rucno_dodat_znak,True
+178,bench,8.360582432942465e-05,znak1.jpg,3728,rucno_dodat_znak,True
+179,clock,8.348640403710306e-05,znak1.jpg,3728,rucno_dodat_znak,True
+180,potted plant,8.346189133590087e-05,znak1.jpg,3728,rucno_dodat_znak,True
+181,boat,8.200091542676091e-05,znak1.jpg,3728,rucno_dodat_znak,True
+182,boat,8.169317152351141e-05,znak1.jpg,3728,rucno_dodat_znak,True
+183,bench,8.142663136823103e-05,znak1.jpg,3728,rucno_dodat_znak,True
+184,potted plant,8.026744762901217e-05,znak1.jpg,3728,rucno_dodat_znak,True
+185,clock,7.817191362846643e-05,znak1.jpg,3728,rucno_dodat_znak,True
+186,truck,7.803643529769033e-05,znak1.jpg,3728,rucno_dodat_znak,True
+187,potted plant,7.800116873113438e-05,znak1.jpg,3728,rucno_dodat_znak,True
+188,car,7.780845771776512e-05,znak1.jpg,3728,rucno_dodat_znak,True
+189,stop sign,7.711676153121516e-05,znak1.jpg,3728,rucno_dodat_znak,True
+190,clock,7.663796714041382e-05,znak1.jpg,3728,rucno_dodat_znak,True
+191,clock,7.486621325369924e-05,znak1.jpg,3728,rucno_dodat_znak,True
+192,car,7.440181798301637e-05,znak1.jpg,3728,rucno_dodat_znak,True
+193,traffic light,7.429958350257948e-05,znak1.jpg,3728,rucno_dodat_znak,True
+194,bench,7.410965918097645e-05,znak1.jpg,3728,rucno_dodat_znak,True
+195,car,7.37173468223773e-05,znak1.jpg,3728,rucno_dodat_znak,True
+196,person,7.3398114182055e-05,znak1.jpg,3728,rucno_dodat_znak,True
+197,bench,7.314420508919284e-05,znak1.jpg,3728,rucno_dodat_znak,True
+198,traffic light,7.309957436518744e-05,znak1.jpg,3728,rucno_dodat_znak,True
+199,traffic light,7.216317317215726e-05,znak1.jpg,3728,rucno_dodat_znak,True
+200,boat,7.13012195774354e-05,znak1.jpg,3728,rucno_dodat_znak,True
+201,bicycle,7.119943620637059e-05,znak1.jpg,3728,rucno_dodat_znak,True
+202,car,7.091572479112074e-05,znak1.jpg,3728,rucno_dodat_znak,True
+203,potted plant,7.080760406097397e-05,znak1.jpg,3728,rucno_dodat_znak,True
+204,potted plant,6.884561298647895e-05,znak1.jpg,3728,rucno_dodat_znak,True
+205,car,6.786933226976544e-05,znak1.jpg,3728,rucno_dodat_znak,True
+206,car,6.739542004652321e-05,znak1.jpg,3728,rucno_dodat_znak,True
+207,car,6.720321107422933e-05,znak1.jpg,3728,rucno_dodat_znak,True
+208,potted plant,6.645713438047096e-05,znak1.jpg,3728,rucno_dodat_znak,True
+209,potted plant,6.589021359104663e-05,znak1.jpg,3728,rucno_dodat_znak,True
+210,traffic light,6.544828647747636e-05,znak1.jpg,3728,rucno_dodat_znak,True
+211,potted plant,6.329218012979254e-05,znak1.jpg,3728,rucno_dodat_znak,True
+212,traffic light,6.265526462811977e-05,znak1.jpg,3728,rucno_dodat_znak,True
+213,traffic light,6.189695704961196e-05,znak1.jpg,3728,rucno_dodat_znak,True
+214,car,6.106006912887096e-05,znak1.jpg,3728,rucno_dodat_znak,True
+215,traffic light,6.104097701609135e-05,znak1.jpg,3728,rucno_dodat_znak,True
+216,clock,6.1003789596725255e-05,znak1.jpg,3728,rucno_dodat_znak,True
+217,potted plant,5.9872563724638894e-05,znak1.jpg,3728,rucno_dodat_znak,True
+218,clock,5.937664536759257e-05,znak1.jpg,3728,rucno_dodat_znak,True
+219,bench,5.9272944781696424e-05,znak1.jpg,3728,rucno_dodat_znak,True
+220,car,5.891578257433139e-05,znak1.jpg,3728,rucno_dodat_znak,True
+221,traffic light,5.890139800612815e-05,znak1.jpg,3728,rucno_dodat_znak,True
+222,bench,5.7177123380824924e-05,znak1.jpg,3728,rucno_dodat_znak,True
+223,bicycle,5.713036080123857e-05,znak1.jpg,3728,rucno_dodat_znak,True
+224,car,5.687812517862767e-05,znak1.jpg,3728,rucno_dodat_znak,True
+225,potted plant,5.682846676791087e-05,znak1.jpg,3728,rucno_dodat_znak,True
+226,bench,5.6584256526548415e-05,znak1.jpg,3728,rucno_dodat_znak,True
+227,traffic light,5.5893822718644515e-05,znak1.jpg,3728,rucno_dodat_znak,True
+228,potted plant,5.5465490731876343e-05,znak1.jpg,3728,rucno_dodat_znak,True
+229,potted plant,5.535367745324038e-05,znak1.jpg,3728,rucno_dodat_znak,True
+230,car,5.5282518587773666e-05,znak1.jpg,3728,rucno_dodat_znak,True
+231,bird,5.512726784218103e-05,znak1.jpg,3728,rucno_dodat_znak,True
+232,potted plant,5.506711022462696e-05,znak1.jpg,3728,rucno_dodat_znak,True
+233,car,5.4770840506535023e-05,znak1.jpg,3728,rucno_dodat_znak,True
+234,potted plant,5.468389281304553e-05,znak1.jpg,3728,rucno_dodat_znak,True
+235,clock,5.452310142572969e-05,znak1.jpg,3728,rucno_dodat_znak,True
+236,car,5.447829607874155e-05,znak1.jpg,3728,rucno_dodat_znak,True
+237,car,5.350643186829984e-05,znak1.jpg,3728,rucno_dodat_znak,True
+238,car,5.344314922695048e-05,znak1.jpg,3728,rucno_dodat_znak,True
+239,truck,5.339908238966018e-05,znak1.jpg,3728,rucno_dodat_znak,True
+240,person,5.337626862456091e-05,znak1.jpg,3728,rucno_dodat_znak,True
+241,bicycle,5.29557146364823e-05,znak1.jpg,3728,rucno_dodat_znak,True
+242,potted plant,5.2569190302165225e-05,znak1.jpg,3728,rucno_dodat_znak,True
+243,potted plant,5.21114379807841e-05,znak1.jpg,3728,rucno_dodat_znak,True
+244,traffic light,5.1949442422483116e-05,znak1.jpg,3728,rucno_dodat_znak,True
+245,boat,5.1888888265239075e-05,znak1.jpg,3728,rucno_dodat_znak,True
+246,clock,5.156819679541513e-05,znak1.jpg,3728,rucno_dodat_znak,True
+247,potted plant,5.118286935612559e-05,znak1.jpg,3728,rucno_dodat_znak,True
+248,potted plant,5.111234349897131e-05,znak1.jpg,3728,rucno_dodat_znak,True
+249,traffic light,5.093707295600325e-05,znak1.jpg,3728,rucno_dodat_znak,True
+250,potted plant,5.0887454563053325e-05,znak1.jpg,3728,rucno_dodat_znak,True
+251,potted plant,5.058211536379531e-05,znak1.jpg,3728,rucno_dodat_znak,True
+252,potted plant,5.0478371122153476e-05,znak1.jpg,3728,rucno_dodat_znak,True
+253,traffic light,5.044516365160234e-05,znak1.jpg,3728,rucno_dodat_znak,True
+254,traffic light,4.981277015758678e-05,znak1.jpg,3728,rucno_dodat_znak,True
+255,potted plant,4.946031913277693e-05,znak1.jpg,3728,rucno_dodat_znak,True
+256,potted plant,4.945757973473519e-05,znak1.jpg,3728,rucno_dodat_znak,True
+257,traffic light,4.825444193556905e-05,znak1.jpg,3728,rucno_dodat_znak,True
+258,car,4.7849091060925275e-05,znak1.jpg,3728,rucno_dodat_znak,True
+259,bench,4.7438094043172896e-05,znak1.jpg,3728,rucno_dodat_znak,True
+260,person,4.7302797611337155e-05,znak1.jpg,3728,rucno_dodat_znak,True
+261,truck,4.730104046757333e-05,znak1.jpg,3728,rucno_dodat_znak,True
+262,car,4.7248922783182934e-05,znak1.jpg,3728,rucno_dodat_znak,True
+263,potted plant,4.712504232884385e-05,znak1.jpg,3728,rucno_dodat_znak,True
+264,car,4.697872282122262e-05,znak1.jpg,3728,rucno_dodat_znak,True
+265,person,4.584961061482318e-05,znak1.jpg,3728,rucno_dodat_znak,True
+266,person,4.571566023514606e-05,znak1.jpg,3728,rucno_dodat_znak,True
+267,car,4.5601933379657567e-05,znak1.jpg,3728,rucno_dodat_znak,True
+268,person,4.5305921958060935e-05,znak1.jpg,3728,rucno_dodat_znak,True
+269,bench,4.442640420165844e-05,znak1.jpg,3728,rucno_dodat_znak,True
+270,car,4.441382043296471e-05,znak1.jpg,3728,rucno_dodat_znak,True
+271,car,4.423173231771216e-05,znak1.jpg,3728,rucno_dodat_znak,True
+272,traffic light,4.358843216323294e-05,znak1.jpg,3728,rucno_dodat_znak,True
+273,potted plant,4.3193223973503336e-05,znak1.jpg,3728,rucno_dodat_znak,True
+274,traffic light,4.2710715206339955e-05,znak1.jpg,3728,rucno_dodat_znak,True
+275,traffic light,4.236094173393212e-05,znak1.jpg,3728,rucno_dodat_znak,True
+276,car,4.2204086639685556e-05,znak1.jpg,3728,rucno_dodat_znak,True
+277,bicycle,4.1357201553182676e-05,znak1.jpg,3728,rucno_dodat_znak,True
+278,potted plant,4.128095315536484e-05,znak1.jpg,3728,rucno_dodat_znak,True
+279,potted plant,4.1218841943191364e-05,znak1.jpg,3728,rucno_dodat_znak,True
+280,traffic light,4.0835540858097374e-05,znak1.jpg,3728,rucno_dodat_znak,True
+281,potted plant,4.075842662132345e-05,znak1.jpg,3728,rucno_dodat_znak,True
+282,bicycle,4.0520237234886736e-05,znak1.jpg,3728,rucno_dodat_znak,True
+283,bench,4.032703145639971e-05,znak1.jpg,3728,rucno_dodat_znak,True
+284,bench,4.015817467006855e-05,znak1.jpg,3728,rucno_dodat_znak,True
+285,traffic light,3.9724753150949255e-05,znak1.jpg,3728,rucno_dodat_znak,True
+286,boat,3.940476744901389e-05,znak1.jpg,3728,rucno_dodat_znak,True
+287,truck,3.939364614780061e-05,znak1.jpg,3728,rucno_dodat_znak,True
+288,person,3.934993947041221e-05,znak1.jpg,3728,rucno_dodat_znak,True
+289,car,3.918001675629057e-05,znak1.jpg,3728,rucno_dodat_znak,True
+290,boat,3.917908179573715e-05,znak1.jpg,3728,rucno_dodat_znak,True
+291,bicycle,3.9094287785701454e-05,znak1.jpg,3728,rucno_dodat_znak,True
+292,traffic light,3.9028913306538016e-05,znak1.jpg,3728,rucno_dodat_znak,True
+293,potted plant,3.884040779666975e-05,znak1.jpg,3728,rucno_dodat_znak,True
+294,truck,3.8605696317972615e-05,znak1.jpg,3728,rucno_dodat_znak,True
+295,airplane,3.8347559893736616e-05,znak1.jpg,3728,rucno_dodat_znak,True
+296,boat,3.808011388173327e-05,znak1.jpg,3728,rucno_dodat_znak,True
+297,parking meter,3.7766167224617675e-05,znak1.jpg,3728,rucno_dodat_znak,True
+298,car,3.7386507756309584e-05,znak1.jpg,3728,rucno_dodat_znak,True
+299,potted plant,3.736251892405562e-05,znak1.jpg,3728,rucno_dodat_znak,True
+300,parking meter,3.735503923962824e-05,znak1.jpg,3728,rucno_dodat_znak,True
+301,traffic light,3.714038757607341e-05,znak1.jpg,3728,rucno_dodat_znak,True
+302,traffic light,3.6852772609563544e-05,znak1.jpg,3728,rucno_dodat_znak,True
+303,person,3.6798832297790796e-05,znak1.jpg,3728,rucno_dodat_znak,True
+304,person,3.655926411738619e-05,znak1.jpg,3728,rucno_dodat_znak,True
+305,person,3.6553930840454996e-05,znak1.jpg,3728,rucno_dodat_znak,True
+306,boat,3.637467307271436e-05,znak1.jpg,3728,rucno_dodat_znak,True
+307,car,3.6201367038302124e-05,znak1.jpg,3728,rucno_dodat_znak,True
+308,clock,3.586191451177001e-05,znak1.jpg,3728,rucno_dodat_znak,True
+309,traffic light,3.5630859201774e-05,znak1.jpg,3728,rucno_dodat_znak,True
+310,car,3.560436744010076e-05,znak1.jpg,3728,rucno_dodat_znak,True
+311,bench,3.5560591641115025e-05,znak1.jpg,3728,rucno_dodat_znak,True
+312,bench,3.554696377250366e-05,znak1.jpg,3728,rucno_dodat_znak,True
+313,bench,3.539322278811596e-05,znak1.jpg,3728,rucno_dodat_znak,True
+314,traffic light,3.536670556059107e-05,znak1.jpg,3728,rucno_dodat_znak,True
+315,potted plant,3.52659699274227e-05,znak1.jpg,3728,rucno_dodat_znak,True
+316,potted plant,3.513069896143861e-05,znak1.jpg,3728,rucno_dodat_znak,True
+317,person,0.060318175703287125,znak1.jpg,3728,rucno_dodat_znak,True
+318,person,0.7665987610816956,znak.jpg,3728,rucno_dodat_znak,True
+319,stop sign,0.7090008854866028,znak.jpg,3728,rucno_dodat_znak,True
+320,stop sign,0.10984974354505539,znak3.jpg,3728,rucno_dodat_znak,True
+321,III-85-2,0.06048332899808884,znak.jpg,3728,rucno_dodat_znak,True
+322,II-30-40,0.13703446090221405,znak1.jpg,3728,rucno_dodat_znak,True
+323,III-47,0.07780771702528,znak1.jpg,3728,rucno_dodat_znak,True
+324,II-7.1,0.05633610486984253,znak1.jpg,3728,rucno_dodat_znak,True
+325,stop,0.94,test_1.jpg,3729,stop,True
+326,ogranicenje_brzine,0.88,test_2.jpg,3730,ogranicenje_brzine,True
+327,pesacki_prelaz,0.76,test_3.jpg,3731,pesacki_prelaz,True
+328,zabrana_parkiranja,0.61,test_4.jpg,3732,zabrana_parkiranja,True
+329,obavezan_smer,0.83,test_5.jpg,3733,obavezan_smer,True

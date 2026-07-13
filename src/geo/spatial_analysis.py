@@ -204,7 +204,71 @@ def analysis_4_traffic_lights_near_intersections(distance_m=30):
     return result
 
 
-def analysis_5_create_heatmap():
+def analysis_5_ml_detections_vs_katastar(distance_m=50):
+    """
+    Poredi ML detekcije sa postojecim katastrom znakova.
+    Koristi 'intersects' predikat (za razliku od 'within' u ostalim analizama):
+    detekcija se smatra poklopljenom ako upada u buffer zonu oko postojeceg znaka.
+    Detekcije bez poklapanja su kandidati za nove, jos neuvedene znakove.
+    """
+    conn = get_connection()
+    ml = gpd.read_postgis(
+        """
+        SELECT id, klasa, confidence, naziv_slike, znak_id, geom
+        FROM ml_detekcije
+        WHERE geom IS NOT NULL;
+        """,
+        conn,
+        geom_col="geom"
+    )
+    conn.close()
+
+    _, znakovi, _, _ = load_layers()
+
+    ml_m = ml.to_crs(epsg=32634)
+    znakovi_m = znakovi.to_crs(epsg=32634)
+
+    znakovi_buffer = znakovi_m.copy()
+    znakovi_buffer["geom"] = znakovi_buffer.geometry.buffer(distance_m)
+    znakovi_buffer = znakovi_buffer.set_geometry("geom")
+
+    result = gpd.sjoin(
+        ml_m,
+        znakovi_buffer[["id", "tip_znaka", "geom"]],
+        how="left",
+        predicate="intersects"
+    )
+
+    result = result.rename(columns={
+        "id_left": "detekcija_id",
+        "id_right": "katastarski_znak_id",
+        "tip_znaka": "poklapa_se_sa_tipom"
+    })
+
+    result["poklapa_se_sa_katastrom"] = result["katastarski_znak_id"].notna()
+
+    result = result[
+        [
+            "detekcija_id",
+            "klasa",
+            "confidence",
+            "naziv_slike",
+            "katastarski_znak_id",
+            "poklapa_se_sa_tipom",
+            "poklapa_se_sa_katastrom"
+        ]
+    ].drop_duplicates(subset="detekcija_id")
+
+    output = RESULTS_ANALYSIS / "ml_detekcije_vs_katastar.csv"
+    result.to_csv(output, index=False, encoding="utf-8-sig")
+
+    print(f"Analiza 5 sacuvana: {output}")
+    print(result.head())
+
+    return result
+
+
+def analysis_6_create_heatmap():
     """
     Pravi heatmap gustine saobraćajne signalizacije.
     """
@@ -238,7 +302,7 @@ def analysis_5_create_heatmap():
     output = RESULTS_MAPS / "heatmap_signalizacije.html"
     m.save(output)
 
-    print(f"Analiza 5 - heatmap sacuvana: {output}")
+    print(f"Analiza 6 - heatmap sacuvana: {output}")
 
 
 def run_all_spatial_analyses():
@@ -248,7 +312,8 @@ def run_all_spatial_analyses():
     analysis_2_signs_near_traffic_lights()
     analysis_3_signs_by_type()
     analysis_4_traffic_lights_near_intersections()
-    analysis_5_create_heatmap()
+    analysis_5_ml_detections_vs_katastar()
+    analysis_6_create_heatmap()
 
     print("Sve prostorne analize su zavrsene.")
 

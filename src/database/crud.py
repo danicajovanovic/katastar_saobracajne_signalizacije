@@ -25,14 +25,25 @@ def create_traffic_sign(tip_znaka, opis, stanje, proizvodjac, lon, lat):
 
     cur.execute("""
         INSERT INTO saobracajni_znakovi
-        (tip_znaka, opis, stanje, datum_postavljanja, proizvodjac, geom)
+        (tip_znaka, opis, stanje, datum_postavljanja, proizvodjac, ulica_id, geom)
         VALUES
-        (%s, %s, %s, CURRENT_DATE, %s, ST_SetSRID(ST_MakePoint(%s, %s), 4326));
+        (
+            %s, %s, %s, CURRENT_DATE, %s,
+            (
+                SELECT u.id
+                FROM ulice u
+                ORDER BY u.geom <-> ST_SetSRID(ST_MakePoint(%s, %s), 4326)
+                LIMIT 1
+            ),
+            ST_SetSRID(ST_MakePoint(%s, %s), 4326)
+        );
     """, (
         tip_znaka,
         opis,
         stanje,
         proizvodjac,
+        lon,
+        lat,
         lon,
         lat
     ))

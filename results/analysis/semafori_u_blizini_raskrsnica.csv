@@ -324,6 +324,7 @@
 169,aktivan,136,Raskrsnica sa semaforom,kontrolisana raskrsnica
 169,aktivan,169,Raskrsnica sa semaforom,kontrolisana raskrsnica
 170,aktivan,170,Raskrsnica sa semaforom,kontrolisana raskrsnica
+170,aktivan,425,Raskrsnica Laze Telečkog / Futoška,nekontrolisana raskrsnica
 171,aktivan,171,Raskrsnica sa semaforom,kontrolisana raskrsnica
 172,aktivan,172,Raskrsnica sa semaforom,kontrolisana raskrsnica
 173,aktivan,173,Raskrsnica sa semaforom,kontrolisana raskrsnica
@@ -795,3 +796,9 @@
 420,aktivan,420,Raskrsnica sa semaforom,kontrolisana raskrsnica
 421,aktivan,421,Raskrsnica sa semaforom,kontrolisana raskrsnica
 422,aktivan,422,Raskrsnica sa semaforom,kontrolisana raskrsnica
+423,aktivan,423,Raskrsnica Bulevar / Futoška,kontrolisana raskrsnica
+424,aktivan,424,Raskrsnica Bulevar / Temerinska,kontrolisana raskrsnica
+425,neispravan,170,Raskrsnica sa semaforom,kontrolisana raskrsnica
+425,neispravan,425,Raskrsnica Laze Telečkog / Futoška,nekontrolisana raskrsnica
+426,aktivan,426,Kružni tok Liman,kruzni tok
+427,u_odrzavanju,427,Raskrsnica Temerinska / Kisačka,kontrolisana raskrsnica

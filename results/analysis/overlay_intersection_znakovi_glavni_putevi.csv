@@ -1,4 +1,18 @@
 ﻿znak_id,tip_znaka,stanje,ulica_id,naziv_ulice,tip_ulice
+2763,stop,dobro,7498,Доње Сајлово,tertiary
+2763,stop,dobro,7500,Доње Сајлово,tertiary
+3697,pedestrian_crossing,dobro,11258,Партизанска,secondary
+3697,pedestrian_crossing,dobro,11259,Партизанска,secondary
+3697,pedestrian_crossing,dobro,11263,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11267,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11271,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11282,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11283,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11286,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11287,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11288,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11470,Темеринска,secondary
+3697,pedestrian_crossing,dobro,11472,Темеринска,secondary
 1,stop,dobro,159,Пут за Руму,primary
 1,stop,dobro,160,Nepoznata ulica,secondary
 1,stop,dobro,162,Пут за Руму,primary
@@ -104,6 +118,20 @@
 23,stop,dobro,488,Железничка,tertiary
 23,stop,dobro,489,Железничка,tertiary
 23,stop,dobro,491,Железничка,tertiary
+3698,pedestrian_crossing,dobro,11251,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11252,Пут шајкашког одреда,secondary
+3698,pedestrian_crossing,dobro,11253,Пут шајкашког одреда,secondary
+3698,pedestrian_crossing,dobro,11255,Пут шајкашког одреда,secondary
+3698,pedestrian_crossing,dobro,11263,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11267,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11271,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11282,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11283,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11286,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11287,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11288,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11470,Темеринска,secondary
+3698,pedestrian_crossing,dobro,11472,Темеринска,secondary
 24,pedestrian_crossing,dobro,357,Железничка,tertiary
 24,pedestrian_crossing,dobro,481,Моше Пијаде,tertiary
 24,pedestrian_crossing,dobro,488,Железничка,tertiary
@@ -8178,12 +8206,20 @@
 1629,pedestrian_crossing,dobro,5324,Футошка,secondary
 1629,pedestrian_crossing,dobro,5328,Футошка,secondary
 1629,pedestrian_crossing,dobro,5330,Футошка,secondary
+1629,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1629,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1629,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1629,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1630,pedestrian_crossing,dobro,5159,Футошка,secondary
 1630,pedestrian_crossing,dobro,5160,Футошка,secondary
 1630,pedestrian_crossing,dobro,5163,Футошка,secondary
 1630,pedestrian_crossing,dobro,5324,Футошка,secondary
 1630,pedestrian_crossing,dobro,5328,Футошка,secondary
 1630,pedestrian_crossing,dobro,5330,Футошка,secondary
+1630,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1630,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1630,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1630,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1631,pedestrian_crossing,dobro,5159,Футошка,secondary
 1631,pedestrian_crossing,dobro,5160,Футошка,secondary
 1631,pedestrian_crossing,dobro,5162,Футошка,secondary
@@ -8224,12 +8260,20 @@
 1635,pedestrian_crossing,dobro,5163,Футошка,secondary
 1635,pedestrian_crossing,dobro,5324,Футошка,secondary
 1635,pedestrian_crossing,dobro,5328,Футошка,secondary
+1635,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1635,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1635,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1635,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1636,pedestrian_crossing,dobro,5159,Футошка,secondary
 1636,pedestrian_crossing,dobro,5160,Футошка,secondary
 1636,pedestrian_crossing,dobro,5162,Футошка,secondary
 1636,pedestrian_crossing,dobro,5163,Футошка,secondary
 1636,pedestrian_crossing,dobro,5324,Футошка,secondary
 1636,pedestrian_crossing,dobro,5328,Футошка,secondary
+1636,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1636,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1636,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1636,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1637,pedestrian_crossing,dobro,5191,Булевар ослобођења,secondary
 1637,pedestrian_crossing,dobro,5194,Максима Горког,tertiary
 1637,pedestrian_crossing,dobro,5548,Булевар ослобођења,secondary
@@ -10522,6 +10566,10 @@
 1899,speed_camera,dobro,5440,Футошка,secondary
 1899,speed_camera,dobro,5544,Браће Рибникар,tertiary
 1899,speed_camera,dobro,5561,Футошка,secondary
+1900,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1900,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1900,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1900,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1902,pedestrian_crossing,dobro,5549,Булевар ослобођења,secondary
 1902,pedestrian_crossing,dobro,5561,Футошка,secondary
 1902,pedestrian_crossing,dobro,5562,Футошка,secondary
@@ -10808,10 +10856,22 @@
 1926,pedestrian_crossing,dobro,5772,Јеврејска,secondary
 1926,pedestrian_crossing,dobro,5779,Булевар ослобођења,secondary
 1926,pedestrian_crossing,dobro,5781,Булевар ослобођења,secondary
+1927,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1927,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1927,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1927,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
+1928,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+1928,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+1928,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+1928,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 1929,pedestrian_crossing,dobro,5779,Булевар ослобођења,secondary
 1929,pedestrian_crossing,dobro,5781,Булевар ослобођења,secondary
 1929,pedestrian_crossing,dobro,6018,Булевар ослобођења,secondary
 1929,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
+1930,stop,dobro,12377,Bulevar Mihajla Pupina,primary
+1930,stop,dobro,12378,Bulevar Oslobođenja,primary
+1930,stop,dobro,12379,Futoška ulica,secondary
+1930,stop,dobro,12380,Temerinska ulica,secondary
 1931,pedestrian_crossing,dobro,5345,Хајдук Вељкова,tertiary
 1931,pedestrian_crossing,dobro,5349,Хајдук Вељкова,tertiary
 1931,pedestrian_crossing,dobro,6205,Хајдук Вељкова,tertiary
@@ -12072,6 +12132,10 @@
 2047,pedestrian_crossing,dobro,6007,Јеврејска,secondary
 2054,pedestrian_crossing,dobro,6474,Новосадског сајма,tertiary
 2054,pedestrian_crossing,dobro,6475,Новосадског сајма,tertiary
+2054,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2054,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2054,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2054,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2055,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2055,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2055,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12080,6 +12144,10 @@
 2055,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2055,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2055,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
+2055,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2055,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2055,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2055,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2056,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2056,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2056,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12088,6 +12156,10 @@
 2056,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2056,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2056,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
+2056,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2056,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2056,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2056,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2057,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2057,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2057,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12096,8 +12168,16 @@
 2057,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2057,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2057,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
+2057,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2057,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2057,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2057,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2058,pedestrian_crossing,dobro,6474,Новосадског сајма,tertiary
 2058,pedestrian_crossing,dobro,6475,Новосадског сајма,tertiary
+2058,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2058,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2058,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2058,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2059,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2059,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2059,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12106,6 +12186,10 @@
 2059,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2059,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2059,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
+2059,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2059,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2059,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2059,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2060,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2060,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2060,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12115,6 +12199,10 @@
 2060,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2060,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2060,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2060,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2060,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2060,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2060,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2061,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2061,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2061,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12124,15 +12212,27 @@
 2061,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2061,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2061,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2061,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2061,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2061,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2061,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2062,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2062,pedestrian_crossing,dobro,6474,Новосадског сајма,tertiary
 2062,pedestrian_crossing,dobro,6475,Новосадског сајма,tertiary
 2062,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2062,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
+2062,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2062,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2062,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2062,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2063,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2063,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
 2063,pedestrian_crossing,dobro,6476,Новосадског сајма,tertiary
 2063,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
+2063,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2063,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2063,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2063,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2064,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2064,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2064,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12142,6 +12242,10 @@
 2064,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2064,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2064,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2064,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2064,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2064,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2064,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2065,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2065,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2065,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12151,6 +12255,10 @@
 2065,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2065,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2065,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2065,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2065,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2065,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2065,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2066,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2066,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2066,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12160,6 +12268,10 @@
 2066,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2066,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2066,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2066,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2066,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2066,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2066,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2067,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2067,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2067,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12169,6 +12281,10 @@
 2067,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2067,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2067,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2067,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2067,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2067,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2067,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2068,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2068,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2068,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12178,6 +12294,10 @@
 2068,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2068,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2068,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2068,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2068,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2068,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2068,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2069,pedestrian_crossing,dobro,6034,Булевар ослобођења,secondary
 2069,pedestrian_crossing,dobro,6039,Булевар ослобођења,secondary
 2069,pedestrian_crossing,dobro,6040,Булевар ослобођења,secondary
@@ -12187,6 +12307,10 @@
 2069,pedestrian_crossing,dobro,6718,Булевар ослобођења,secondary
 2069,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2069,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2069,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2069,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2069,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2069,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2070,pedestrian_crossing,dobro,6258,Новосадског сајма,tertiary
 2070,pedestrian_crossing,dobro,6464,Новосадског сајма,tertiary
 2070,pedestrian_crossing,dobro,6467,Новосадског сајма,tertiary
@@ -12203,6 +12327,10 @@
 2079,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
 2080,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2080,pedestrian_crossing,dobro,7029,Булевар ослобођења,secondary
+2081,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2081,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2081,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2081,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2082,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2083,pedestrian_crossing,dobro,7026,Булевар ослобођења,secondary
 2084,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
@@ -14432,18 +14560,46 @@
 2384,pedestrian_crossing,dobro,7243,Руменачка,tertiary
 2391,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2391,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2391,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2391,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2391,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2391,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2392,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2392,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2392,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2392,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2392,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2392,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2393,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2393,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2393,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2393,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2393,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2393,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2394,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2394,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2394,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2394,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2394,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2394,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2395,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2395,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2395,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2395,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2395,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2395,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2396,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2396,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2396,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2396,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2396,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2396,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2397,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2397,pedestrian_crossing,dobro,6838,Војводе Бојовића,tertiary
+2397,pedestrian_crossing,dobro,12377,Bulevar Mihajla Pupina,primary
+2397,pedestrian_crossing,dobro,12378,Bulevar Oslobođenja,primary
+2397,pedestrian_crossing,dobro,12379,Futoška ulica,secondary
+2397,pedestrian_crossing,dobro,12380,Temerinska ulica,secondary
 2398,pedestrian_crossing,dobro,6740,Војводе Бојовића,tertiary
 2399,pedestrian_crossing,dobro,6759,Булевар краља Петра I,tertiary
 2399,pedestrian_crossing,dobro,8724,Булевар краља Петра I,tertiary
@@ -17423,8 +17579,6 @@
 2753,stop,dobro,7491,Краља Петра I,tertiary
 2753,stop,dobro,7492,Краља Петра I,tertiary
 2753,stop,dobro,7493,Доње Сајлово,tertiary
-2763,stop,dobro,7498,Доње Сајлово,tertiary
-2763,stop,dobro,7500,Доње Сајлово,tertiary
 2764,stop,dobro,7500,Доње Сајлово,tertiary
 2764,stop,dobro,7501,Доње Сајлово,tertiary
 2764,stop,dobro,8937,Доње Сајлово,tertiary
@@ -22547,32 +22701,6 @@
 3696,pedestrian_crossing,dobro,11288,Темеринска,secondary
 3696,pedestrian_crossing,dobro,11470,Темеринска,secondary
 3696,pedestrian_crossing,dobro,11472,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11258,Партизанска,secondary
-3697,pedestrian_crossing,dobro,11259,Партизанска,secondary
-3697,pedestrian_crossing,dobro,11263,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11267,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11271,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11282,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11283,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11286,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11287,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11288,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11470,Темеринска,secondary
-3697,pedestrian_crossing,dobro,11472,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11251,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11252,Пут шајкашког одреда,secondary
-3698,pedestrian_crossing,dobro,11253,Пут шајкашког одреда,secondary
-3698,pedestrian_crossing,dobro,11255,Пут шајкашког одреда,secondary
-3698,pedestrian_crossing,dobro,11263,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11267,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11271,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11282,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11283,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11286,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11287,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11288,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11470,Темеринска,secondary
-3698,pedestrian_crossing,dobro,11472,Темеринска,secondary
 3699,pedestrian_crossing,dobro,11253,Пут шајкашког одреда,secondary
 3699,pedestrian_crossing,dobro,11263,Темеринска,secondary
 3699,pedestrian_crossing,dobro,11267,Темеринска,secondary
@@ -22782,3 +22910,22 @@
 3725,stop,dobro,12294,Темерински пут,secondary
 3725,stop,dobro,12318,Темерински пут,secondary
 3725,stop,dobro,12320,Темерински пут,secondary
+3728,rucno_dodat_znak,ostecen,8740,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8790,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8791,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8792,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8817,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8818,Кисачка,secondary
+3728,rucno_dodat_znak,ostecen,8820,Кисачка,secondary
+3729,stop,dobro,12377,Bulevar Mihajla Pupina,primary
+3729,stop,dobro,12378,Bulevar Oslobođenja,primary
+3729,stop,dobro,12379,Futoška ulica,secondary
+3729,stop,dobro,12380,Temerinska ulica,secondary
+3731,pesacki_prelaz,ostecen,5159,Футошка,secondary
+3731,pesacki_prelaz,ostecen,5160,Футошка,secondary
+3731,pesacki_prelaz,ostecen,5162,Футошка,secondary
+3731,pesacki_prelaz,ostecen,5163,Футошка,secondary
+3731,pesacki_prelaz,ostecen,5324,Футошка,secondary
+3732,zabrana_parkiranja,potrebno odrzavanje,4327,Булевар цара Лазара,secondary
+3732,zabrana_parkiranja,potrebno odrzavanje,4345,Булевар цара Лазара,secondary
+3732,zabrana_parkiranja,potrebno odrzavanje,4413,Булевар цара Лазара,secondary
