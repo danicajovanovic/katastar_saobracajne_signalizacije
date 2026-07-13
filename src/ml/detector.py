@@ -5,19 +5,20 @@ from datetime import date
 import pandas as pd
 from ultralytics import YOLO
 
-from src.database.connection import get_connection
+from src.database.connection import managed_cursor
 
 
-RESULTS_DIR = Path("results/ml/detections")
+ROOT = Path(__file__).resolve().parents[2]
+
+RESULTS_DIR = ROOT / "results" / "ml" / "detections"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-CUSTOM_MODEL_PATH = Path("models/best.pt")
+CUSTOM_MODEL_PATH = ROOT / "models" / "best.pt"
 
 def get_model():
     if not CUSTOM_MODEL_PATH.exists():
         raise FileNotFoundError(
-            "Model nije pronađen. Dodaj trenirani model na putanju: "
-            "models/best.pt"
+            f"Model nije pronađen na putanji: {CUSTOM_MODEL_PATH}"
         )
 
     print("Koristi se model treniran od nule za saobracajne znakove.")
@@ -25,43 +26,48 @@ def get_model():
 
 
 def prepare_ml_table():
-    conn = get_connection()
-    cur = conn.cursor()
+    with managed_cursor() as cur:
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS model VARCHAR(100);
+            """
+        )
 
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS model VARCHAR(100);
-    """)
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS bbox_x1 FLOAT;
+            """
+        )
 
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS bbox_x1 FLOAT;
-    """)
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS bbox_y1 FLOAT;
+            """
+        )
 
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS bbox_y1 FLOAT;
-    """)
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS bbox_x2 FLOAT;
+            """
+        )
 
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS bbox_x2 FLOAT;
-    """)
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS bbox_y2 FLOAT;
+            """
+        )
 
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS bbox_y2 FLOAT;
-    """)
-
-    cur.execute("""
-        ALTER TABLE ml_detekcije
-        ADD COLUMN IF NOT EXISTS opis TEXT;
-    """)
-
-    conn.commit()
-    cur.close()
-    conn.close()
-
+        cur.execute(
+            """
+            ALTER TABLE ml_detekcije
+            ADD COLUMN IF NOT EXISTS opis TEXT;
+            """
+        )
 
 NEAREST_SIGN_MATCH_DISTANCE_M = 50
 
@@ -93,56 +99,53 @@ def insert_detection_to_database(
     lon,
     lat,
     model_name,
-    bbox
+    bbox,
 ):
-    conn = get_connection()
-    cur = conn.cursor()
-
     x1, y1, x2, y2 = bbox
-    znak_id = find_nearest_sign(cur, lon, lat)
 
-    cur.execute("""
-        INSERT INTO ml_detekcije
-        (
-            klasa,
-            confidence,
-            naziv_slike,
-            datum,
-            znak_id,
-            geom,
-            model,
-            bbox_x1,
-            bbox_y1,
-            bbox_x2,
-            bbox_y2,
-            opis
+    with managed_cursor() as cur:
+        znak_id = find_nearest_sign(cur, lon, lat)
+
+        cur.execute(
+            """
+            INSERT INTO ml_detekcije
+            (
+                klasa,
+                confidence,
+                naziv_slike,
+                datum,
+                znak_id,
+                geom,
+                model,
+                bbox_x1,
+                bbox_y1,
+                bbox_x2,
+                bbox_y2,
+                opis
+            )
+            VALUES
+            (
+                %s, %s, %s, %s, %s,
+                ST_SetSRID(ST_MakePoint(%s, %s), 4326),
+                %s, %s, %s, %s, %s, %s
+            );
+            """,
+            (
+                klasa,
+                float(confidence),
+                image_name,
+                date.today(),
+                znak_id,
+                lon,
+                lat,
+                model_name,
+                float(x1),
+                float(y1),
+                float(x2),
+                float(y2),
+                "Automatski detektovan objekat pomocu YOLO modela",
+            ),
         )
-        VALUES
-        (
-            %s, %s, %s, %s, %s,
-            ST_SetSRID(ST_MakePoint(%s, %s), 4326),
-            %s, %s, %s, %s, %s, %s
-        );
-    """, (
-        klasa,
-        float(confidence),
-        image_name,
-        date.today(),
-        znak_id,
-        lon,
-        lat,
-        model_name,
-        float(x1),
-        float(y1),
-        float(x2),
-        float(y2),
-        "Automatski detektovan objekat pomocu YOLO modela"
-    ))
-
-    conn.commit()
-    cur.close()
-    conn.close()
-
 
 JITTER_RADIUS_M = 4.0
 
