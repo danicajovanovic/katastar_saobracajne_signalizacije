@@ -1,20 +1,26 @@
 """
-Trening YOLOv8 modela na DFG Traffic Sign Dataset (200 klasa, ista taksonomija kao models/best.pt).
+Trening YOLOv8 modela na DFG Traffic Sign Dataset (200 klasa) - KAGGLE verzija.
 
-NAMENJENO ZA GOOGLE COLAB (Runtime -> Change runtime type -> GPU).
-Pokreni ceo fajl kao jednu Colab celiju.
+NAMENJENO ZA KAGGLE NOTEBOOKS (besplatno 30h GPU/nedeljno, bez payment/region problema).
+
+Podesavanje pre pokretanja:
+  1. kaggle.com -> Create -> New Notebook
+  2. Desno, Settings -> Accelerator -> GPU T4 x2 (ili P100)
+  3. Settings -> Internet -> ON (obavezno, skripta skida dataset sa vicos.si)
+  4. Nalepi ovaj fajl u jednu celiju i pokreni
+
+Checkpoint-i idu u /kaggle/working/dfg_training_runs - to PREZIVI restart kernela
+u istoj sesiji, ali NE prezivi kraj sesije osim ako klikn Save Version (commit)
+ili rucno preuzmes weights/last.pt pre nego sto zatvoris notebook.
+
+Za nastavak u novoj sesiji: preuzmi weights/last.pt sa kraja prethodne sesije,
+napravi Kaggle Dataset od njega, dodaj ga kao Input u novi notebook, i postavi
+RESUME_CKPT ispod na putanju do tog fajla (npr. /kaggle/input/dfg-checkpoint/last.pt).
 
 Popravke u odnosu na prvobitni trening (dfg_200_classes_from_scratch):
-  1. pretrained=True, baza je yolov8s.pt (COCO) umesto yolov8n.yaml od nule.
+  1. pretrained=True, baza yolov8s.pt (COCO) umesto yolov8n.yaml od nule.
   2. imgsz=960 umesto 640 - DFG ima dosta sitnih/udaljenih znakova.
-
-PROJECT_DIR je vec hardkodiran na Drive putanju (nema potrebe za rucnom izmenom
-kao prosli put) - checkpoint-i automatski prezive prekid sesije, i skripta
-sama nastavlja trening (resume) ako pronadje weights/last.pt.
-
-Ocekivano trajanje: par sati na Colab T4 GPU-u (batch/imgsz podesi ako OOM-uje).
 """
-
 
 import json
 import os
@@ -27,28 +33,28 @@ from ultralytics import YOLO
 
 # --- 1. Podesavanja -----------------------------------------------------
 
-ROOT = Path("/content/DFG_yolo")
+ROOT = Path("/kaggle/working/DFG_yolo")
 RAW = ROOT / "raw"
 IMAGES_SRC = RAW / "JPEGImages"
-
-# Dataset je vec preuzet i lezi direktno u korenu My Drive-a (ne u podfolderu).
-# Ako fajlovi ne postoje tu, skripta ce sama skinuti sa vicos.si (fallback).
-DRIVE_DATASET_DIR = Path("/content/drive/MyDrive")
 
 URLS = {
     "annot": "https://data.vicos.si/skokec/villard/DFG-tsd-annot-json.zip",
     "images": "https://data.vicos.si/skokec/villard/JPEGImages.tar.bz2",
 }
 
-MODEL_BASE = "yolov8s.pt"   # COCO pretrained; probaj yolov8m.pt ako GPU/vreme dozvoljava
+MODEL_BASE = "yolov8s.pt"
 EPOCHS = 150
 IMG_SIZE = 960
-BATCH = 16                  # smanji na 8 ako dobijes CUDA out of memory na imgsz=960
+BATCH = 16          # smanji na 8 ako CUDA out of memory
 PATIENCE = 30
 
-# Rezultati idu na Drive da prezive prekid Colab sesije.
-PROJECT_DIR = "/content/drive/MyDrive/dfg_training_runs"
+PROJECT_DIR = "/kaggle/working/dfg_training_runs"
 RUN_NAME = "dfg_200_classes_pretrained"
+
+# Ako nastavljas prekinut trening iz prethodne Kaggle sesije, stavi ovde
+# putanju do uploadovanog checkpoint-a (kao Kaggle Dataset Input), npr:
+# RESUME_CKPT = "/kaggle/input/dfg-checkpoint/last.pt"
+RESUME_CKPT = None
 
 
 # --- 2. Preuzimanje i raspakivanje ---------------------------------------
@@ -69,25 +75,15 @@ def download(url: str, dest: Path) -> None:
 def prepare_raw_data() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
 
-    drive_annot = DRIVE_DATASET_DIR / "DFG-tsd-annot-json.zip"
-    drive_images = DRIVE_DATASET_DIR / "JPEGImages.tar.bz2"
-
-    if drive_annot.exists() and drive_images.exists():
-        print(f"Koristim vec preuzet dataset sa Drive-a: {DRIVE_DATASET_DIR}")
-        annot_zip = drive_annot
-        images_tar = drive_images
-    else:
-        print("Fajlovi nisu nadjeni na Drive-u, skidam dataset sa vicos.si...")
-        annot_zip = RAW / "annot.zip"
-        download(URLS["annot"], annot_zip)
-        images_tar = RAW / "JPEGImages.tar.bz2"
-        download(URLS["images"], images_tar)
-
+    annot_zip = RAW / "annot.zip"
+    download(URLS["annot"], annot_zip)
     if not (RAW / "train.json").exists():
         print("Raspakujem anotacije...")
         with zipfile.ZipFile(annot_zip) as z:
             z.extractall(RAW)
 
+    images_tar = RAW / "JPEGImages.tar.bz2"
+    download(URLS["images"], images_tar)
     if not IMAGES_SRC.exists():
         print("Raspakujem slike (7GB, potraje par minuta)...")
         with tarfile.open(images_tar, "r:bz2") as t:
@@ -157,12 +153,24 @@ def write_data_yaml(names: list[str]) -> Path:
 def train(data_yaml: Path) -> None:
     last_ckpt = Path(PROJECT_DIR) / RUN_NAME / "weights" / "last.pt"
 
-    if last_ckpt.exists():
-        print(f"Nastavljam prekinuti trening od: {last_ckpt}")
+    if RESUME_CKPT:
+        print(f"Nastavljam trening od uploadovanog checkpointa: {RESUME_CKPT}")
+        model = YOLO(RESUME_CKPT)
+        model.train(
+            data=str(data_yaml),
+            epochs=EPOCHS,
+            imgsz=IMG_SIZE,
+            batch=BATCH,
+            patience=PATIENCE,
+            project=PROJECT_DIR,
+            name=RUN_NAME,
+        )
+    elif last_ckpt.exists():
+        print(f"Nastavljam trening od: {last_ckpt} (ista sesija)")
         model = YOLO(str(last_ckpt))
         model.train(resume=True)
     else:
-        model = YOLO(MODEL_BASE)  # COCO pretrained tezine, ne .yaml arhitektura
+        model = YOLO(MODEL_BASE)  # COCO pretrained tezine
         model.train(
             data=str(data_yaml),
             epochs=EPOCHS,
@@ -183,6 +191,9 @@ if __name__ == "__main__":
     train(data_yaml)
 
     print(
-        f"\nGotovo. Najbolje tezine su u {PROJECT_DIR}/{RUN_NAME}/weights/best.pt\n"
-        "Preuzmi taj fajl i zameni njime models/best.pt u projektu."
+        f"\nGotovo (ili prekinuto zbog vremena). Tezine su u "
+        f"{PROJECT_DIR}/{RUN_NAME}/weights/\n"
+        "VAZNO: pre nego sto zatvoris notebook, preuzmi weights/last.pt i weights/best.pt "
+        "rucno (desni klik u Kaggle file browseru -> Download), ili klikni 'Save Version' "
+        "da se /kaggle/working sacuva kao output ove sesije."
     )

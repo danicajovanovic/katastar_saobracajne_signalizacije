@@ -1048,6 +1048,24 @@ MAP_TILES = {
     "OpenStreetMap": "OpenStreetMap",
 }
 
+# folium.Icon prihvata samo ovaj fiksni skup imenovanih boja (Bootstrap/Glyphicon
+# paleta) — zato se za markere nudi selectbox nad ovom listom, dok se za linijski
+# sloj ulica nudi slobodan izbor boje preko color_picker (hex).
+MARKER_COLOR_OPTIONS = [
+    "red", "orange", "green", "purple", "blue", "darkred", "darkblue",
+    "darkgreen", "cadetblue", "darkpurple", "pink", "lightblue",
+    "lightgreen", "gray", "black", "beige",
+]
+
+MARKER_ICON_OPTIONS = {
+    "Znak (info)": "info-sign",
+    "Upozorenje": "warning-sign",
+    "Zastava": "flag",
+    "Zvezda": "star",
+    "Semafor (ok)": "ok-sign",
+    "Kamera": "camera",
+}
+
 
 def map_page() -> None:
     page_header(
@@ -1069,6 +1087,56 @@ def map_page() -> None:
         center_lat = p1.number_input("Centralna širina", value=45.2671, format="%.6f")
         center_lon = p2.number_input("Centralna dužina", value=19.8335, format="%.6f")
         zoom = p3.slider("Početni zoom", 5, 18, 13)
+
+    with st.expander("Podešavanja simbologije (boje i stil slojeva)", expanded=False):
+        st.caption(
+            "Izgled svakog sloja je moguće prilagoditi nezavisno. Za linijski sloj "
+            "ulica bira se proizvoljna boja i debljina linije; za tačkaste slojeve "
+            "bira se boja markera iz dostupne palete i ikonica."
+        )
+
+        st.markdown("**Ulice**")
+        r1, r2, r3 = st.columns(3)
+        roads_color = r1.color_picker("Boja linije", "#38bdf8")
+        roads_weight = r2.slider("Debljina linije", 1.0, 8.0, 2.4, 0.2)
+        roads_opacity = r3.slider("Providnost linije", 0.1, 1.0, 0.66, 0.05)
+
+        st.markdown("**Saobraćajni znakovi**")
+        s1, s2, s3 = st.columns(3)
+        signs_color = s1.selectbox(
+            "Boja markera", MARKER_COLOR_OPTIONS,
+            index=MARKER_COLOR_OPTIONS.index("orange"), key="signs_color",
+        )
+        signs_icon_label = s2.selectbox(
+            "Ikonica", list(MARKER_ICON_OPTIONS.keys()), index=0, key="signs_icon",
+        )
+        highlight_stop = s3.checkbox(
+            "Posebno istakni STOP znakove (crveno)", value=True, key="signs_highlight_stop",
+        )
+
+        st.markdown("**Semafori**")
+        l1, l2 = st.columns(2)
+        lights_color = l1.selectbox(
+            "Boja markera", MARKER_COLOR_OPTIONS,
+            index=MARKER_COLOR_OPTIONS.index("green"), key="lights_color",
+        )
+        lights_icon_label = l2.selectbox(
+            "Ikonica", list(MARKER_ICON_OPTIONS.keys()), index=4, key="lights_icon",
+        )
+
+        st.markdown("**ML detekcije**")
+        m1, m2 = st.columns(2)
+        ml_color = m1.selectbox(
+            "Boja markera", MARKER_COLOR_OPTIONS,
+            index=MARKER_COLOR_OPTIONS.index("purple"), key="ml_color",
+        )
+        ml_icon_label = m2.selectbox(
+            "Ikonica", list(MARKER_ICON_OPTIONS.keys()), index=5, key="ml_icon",
+        )
+
+        signs_icon = MARKER_ICON_OPTIONS[signs_icon_label]
+        lights_icon = MARKER_ICON_OPTIONS[lights_icon_label]
+        ml_icon = MARKER_ICON_OPTIONS[ml_icon_label]
 
     m = folium.Map(
         location=[center_lat, center_lon],
@@ -1098,10 +1166,10 @@ def map_page() -> None:
                         fields=["naziv", "tip_ulice", "ogranicenje_brzine"],
                         aliases=["Naziv:", "Tip:", "Ograničenje:"],
                     ),
-                    style_function=lambda _feature: {
-                        "color": "#38bdf8",
-                        "weight": 2.4,
-                        "opacity": 0.66,
+                    style_function=lambda _feature, _c=roads_color, _w=roads_weight, _o=roads_opacity: {
+                        "color": _c,
+                        "weight": _w,
+                        "opacity": _o,
                     },
                 ).add_to(m)
                 loaded.append(f"Ulice: {len(roads)}")
@@ -1123,7 +1191,7 @@ def map_page() -> None:
                 if row.geom is None:
                     continue
                 sign_type = str(row.get("tip_znaka", "nepoznato"))
-                color = "red" if sign_type.lower() == "stop" else "orange"
+                marker_color = "red" if (highlight_stop and sign_type.lower() == "stop") else signs_color
                 popup = (
                     f"<b>Saobraćajni znak</b><br>"
                     f"<b>Tip:</b> {html.escape(sign_type)}<br>"
@@ -1134,7 +1202,7 @@ def map_page() -> None:
                     location=[row.geom.y, row.geom.x],
                     popup=popup,
                     tooltip=sign_type,
-                    icon=folium.Icon(color=color, icon="info-sign"),
+                    icon=folium.Icon(color=marker_color, icon=signs_icon),
                 ).add_to(sign_cluster)
             sign_group.add_to(m)
             loaded.append(f"Znakovi: {len(signs)}")
@@ -1164,7 +1232,7 @@ def map_page() -> None:
                     location=[row.geom.y, row.geom.x],
                     popup=popup,
                     tooltip="Semafor",
-                    icon=folium.Icon(color="green", icon="ok-sign"),
+                    icon=folium.Icon(color=lights_color, icon=lights_icon),
                 ).add_to(light_cluster)
             light_group.add_to(m)
             loaded.append(f"Semafori: {len(lights)}")
@@ -1197,7 +1265,7 @@ def map_page() -> None:
                     location=[row.geom.y, row.geom.x],
                     popup=popup,
                     tooltip=f"ML: {row.get('klasa', '')}",
-                    icon=folium.Icon(color="purple", icon="camera"),
+                    icon=folium.Icon(color=ml_color, icon=ml_icon),
                 ).add_to(ml_cluster)
             ml_group.add_to(m)
             loaded.append(f"ML: {len(ml_data)}")
