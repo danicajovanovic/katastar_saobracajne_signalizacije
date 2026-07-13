@@ -1,6 +1,7 @@
 import math
-from pathlib import Path
 from datetime import date
+from pathlib import Path
+from uuid import uuid4
 
 import pandas as pd
 from ultralytics import YOLO
@@ -177,8 +178,14 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
 
     detections = []
 
+    unique_id = uuid4().hex[:12]
+
+    output_path = (
+        RESULTS_DIR
+        / f"detected_{image_path.stem}_{unique_id}{image_path.suffix.lower()}"
+    )
+
     for result in results:
-        output_path = RESULTS_DIR / f"detected_{image_name}"
         result.save(filename=str(output_path))
 
         total_boxes = len(result.boxes)
@@ -190,7 +197,12 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
 
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
-            detection_lon, detection_lat = apply_jitter(lon, lat, index, total_boxes)
+            detection_lon, detection_lat = apply_jitter(
+                lon,
+                lat,
+                index,
+                total_boxes,
+            )
 
             insert_detection_to_database(
                 klasa=class_name,
@@ -199,7 +211,7 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
                 lon=detection_lon,
                 lat=detection_lat,
                 model_name=str(CUSTOM_MODEL_PATH),
-                bbox=(x1, y1, x2, y2)
+                bbox=(x1, y1, x2, y2),
             )
 
             detections.append({
@@ -212,7 +224,7 @@ def detect_image(image_path, lon, lat, min_confidence=0.25):
                 "bbox_y1": round(y1, 2),
                 "bbox_x2": round(x2, 2),
                 "bbox_y2": round(y2, 2),
-                "rezultat": str(output_path)
+                "rezultat": str(output_path),
             })
 
     return detections
