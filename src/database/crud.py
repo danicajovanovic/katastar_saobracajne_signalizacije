@@ -10,6 +10,7 @@ ALLOWED_TABLES = {
     "ml_detekcije",
 }
 
+MAX_ROAD_DISTANCE_M = 100
 
 def read_table(table_name):
     if table_name not in ALLOWED_TABLES:
@@ -52,13 +53,28 @@ def create_traffic_sign(tip_znaka, opis, stanje, proizvodjac, lon, lat):
                 (
                     SELECT u.id
                     FROM ulice u
-                    ORDER BY u.geom <-> ST_SetSRID(
-                        ST_MakePoint(%s, %s),
-                        4326
+                    WHERE u.geom IS NOT NULL
+                      AND ST_DWithin(
+                          u.geom::geography,
+                          ST_SetSRID(
+                              ST_MakePoint(%s, %s),
+                              4326
+                          )::geography,
+                          %s
+                      )
+                    ORDER BY ST_Distance(
+                        u.geom::geography,
+                        ST_SetSRID(
+                            ST_MakePoint(%s, %s),
+                            4326
+                        )::geography
                     )
                     LIMIT 1
                 ),
-                ST_SetSRID(ST_MakePoint(%s, %s), 4326)
+                ST_SetSRID(
+                    ST_MakePoint(%s, %s),
+                    4326
+                )
             );
             """,
             (
@@ -66,8 +82,17 @@ def create_traffic_sign(tip_znaka, opis, stanje, proizvodjac, lon, lat):
                 opis,
                 stanje,
                 proizvodjac,
+
+                # ST_DWithin lokacija
                 lon,
                 lat,
+                MAX_ROAD_DISTANCE_M,
+
+                # ST_Distance lokacija
+                lon,
+                lat,
+
+                # Geometrija novog znaka
                 lon,
                 lat,
             ),
