@@ -22,7 +22,7 @@ def get_model():
             f"Model nije pronađen na putanji: {CUSTOM_MODEL_PATH}"
         )
 
-    print("Koristi se model treniran od nule za saobracajne znakove.")
+    print("Koristi se model koji je fino podesentreniran za detekciju saobracajnih znakova.")
     return YOLO(str(CUSTOM_MODEL_PATH))
 
 
